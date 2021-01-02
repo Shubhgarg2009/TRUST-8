@@ -1,0 +1,19 @@
+.names{
+    display:flex;
+    justify-content:space-evenly;
+    color:darkslategray;
+    font-size: 20px;
+   
+}
+.layouts{
+    display:flex;
+   
+    justify-content:space-around;
+    color:darkslategray;
+    font-size: 30px;
+    
+}
+.layouts details{
+    margin-left: 100px;
+   
+}

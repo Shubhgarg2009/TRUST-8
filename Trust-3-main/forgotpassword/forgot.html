@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aradhna Foundation-Started in 2020. Donate Now</title>
+    <link rel = "icon" href = "https://cdn.logo.com/hotlink-ok/logo-social.png" type = "image/x-icon">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="names">
+        <div class="search">
+        <label for="fname">Search:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        </div>
+    <a href="../instruction/instructions.html">
+        <img src="../instruction/title.png"></img>
+        </a>
+        <a href="../help/helpcentre.html">
+            <img src="../help/title.png"></img>
+        </a> 
+        <div class="details">
+            <a href="../login/login.html">
+                <img src ="../indexFolder/Images/log.png" width="100px" height="40px"></img>
+            </a>
+            <a href="../signup/signup.html">
+                <img src ="../indexFolder/Images/signup.png" width="100px" height="40px"></img>
+            </a>
+         </div>
+     </div>
+
+     <div class="layouts">
+        <a href="../indexFolder/index.html">
+           <img src ="logo.png" width="150px" height="110px"></img>
+        </a>
+        <a href="../about/about.html">
+       <img src="../about/title.png"></img>
+    </a>
+    <a href="../follow/follow.html">
+        <img src="../follow/title.png"></img>
+    </a>
+    <a href="../gallery/gallery.html">
+        <img src="../gallery/title.png"></img>
+    </a>
+    <a href="../service/services.html">
+        <img src="../service/title.png"></img>
+    </a>
+    <a href="../donate/donate.html">
+        <img src="../donate/title.png"></img>
+    </a>
+    <a href="../money/money.html">
+        <img src="../money/title.png"></img>
+        </a>
+        <a href="../community/community.html">
+            <img src="../community/title.png"></img>
+        </a>
+
+            </div>
+           <div class="BOX">
+                <div class="container">
+                <header>Confirm Password </header>
+                <form action="#">
+                  <div class="error-text">
+          </div>
+          <div class="field">
+                    <input onkeyup="active()" id="pswrd_1" type="password" placeholder="Enter Password">
+                  </div>
+          <div class="field">
+                    <input onkeyup="active_2()" id="pswrd_2" disabled type="password" placeholder="Confirm Password">
+                    <div class="show">
+          SHOW</div>
+          </div>
+          <button disabled>Check</button>
+                </form>
+          </div>
+          <script>
+                const pswrd_1 = document.querySelector("#pswrd_1");
+                const pswrd_2 = document.querySelector("#pswrd_2");
+                const errorText = document.querySelector(".error-text");
+                const showBtn = document.querySelector(".show");
+                const btn = document.querySelector("button");
+                function active(){
+                  if(pswrd_1.value.length >= 6){
+                    btn.removeAttribute("disabled", "");
+                    btn.classList.add("active");
+                    pswrd_2.removeAttribute("disabled", "");
+                  }else{
+                    btn.setAttribute("disabled", "");
+                    btn.classList.remove("active");
+                    pswrd_2.setAttribute("disabled", "");
+                  }
+                }
+                btn.onclick = function(){
+                  if(pswrd_1.value != pswrd_2.value){
+                    errorText.style.display = "block";
+                    errorText.classList.remove("matched");
+                    errorText.textContent = "Error! Confirm Password Not Match";
+                    return false;
+                  }else{
+                    errorText.style.display = "block";
+                    errorText.classList.add("matched");
+                    errorText.textContent = "Nice! Confirm Password Matched";
+                    return false;
+                  }
+                }
+                function active_2(){
+                  if(pswrd_2.value != ""){
+                    showBtn.style.display = "block";
+                    showBtn.onclick = function(){
+                      if((pswrd_1.type == "password") && (pswrd_2.type == "password")){
+                        pswrd_1.type = "text";
+                        pswrd_2.type = "text";
+                        this.textContent = "Hide";
+                        this.classList.add("active");
+                      }else{
+                        pswrd_1.type = "password";
+                        pswrd_2.type = "password";
+                        this.textContent = "Show";
+                        this.classList.remove("active");
+                      }
+                    }
+                  }else{
+                    showBtn.style.display = "none";
+                  }
+                }
+              </script></div>
+          
+</body>
+</html>
